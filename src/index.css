@@ -1,0 +1,148 @@
+@font-face {
+	font-family: 'Yekan';
+	src: url('./fonts/Yekan/Yekan-Font-master/Yekan.eot');
+	/* IE9 Compat Modes */
+	src: url('./fonts/Yekan/Yekan-Font-master/Yekan.eot?#iefix') format('embedded-opentype'),
+		/* IE6-IE8 */
+		url('./fonts/Yekan/Yekan-Font-master/Yekan.woff2') format('woff2'),
+		/* Modern Browsers */
+		url('./fonts/Yekan/Yekan-Font-master/Yekan.woff') format('woff'),
+		/* Modern Browsers */
+		url('./fonts/Yekan/Yekan-Font-master/Yekan.otf') format('opentype'),
+		/* Open Type Font */
+		url('./fonts/Yekan/Yekan-Font-master/Yekan.ttf') format('truetype');
+	/* Safari, Android, iOS */
+	font-weight: normal;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	font-display: auto;
+}
+
+* {
+
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	font-family: Yekan, Arial, Helvetica, sans-serif;
+}
+
+body {
+
+	background-image: url("./assets/images/bg.svg");
+	background-size: 2000px 1000px;
+	animation: background 45s infinite alternate linear;
+
+}
+
+
+@keyframes background {
+
+	100% {
+		background-size: 4000px 1000px;
+	}
+}
+
+.toggleBtn {
+
+	position: fixed;
+	left: 1rem;
+	top: 1rem;
+}
+
+.toggleBtn div {
+
+	position: relative;
+}
+
+.toggleBtn div input {
+
+	display: none;
+}
+
+.toggleBtn div label {
+
+	width: 90px;
+	height: 45px;
+	background-color: rgb(255, 255, 255);
+	display: block;
+	border-radius: 500px;
+	border: rgba(192, 192, 192, 0.463) 1px solid;
+	position: relative;
+	box-shadow: 0 2px 5px 0px rgb(178, 178, 178);
+	cursor: pointer;
+}
+
+
+.toggleBtn div label::after {
+
+	content: "En";
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	vertical-align: middle;
+	line-height: 35px;
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+	background-color: #1a73e8;
+	position: absolute;
+	border-radius: 50%;
+	top: 4px;
+	margin-left: 5px;
+	transition: margin-left 0.3s ease-out;
+
+}
+
+.toggleBtn div label:hover::after {
+
+	background-color: #004aaa;
+}
+
+
+
+.toggleBtn div input:checked+label::after {
+
+	margin-left: 48px;
+	content: "Fa";
+}
+
+@media(max-width : 768px) {
+
+	body {
+
+		background-size: 2000px 1000px;
+		animation: none;
+	}
+
+	.toggleBtn div label {
+
+		width: 70px;
+		height: 35px;
+		box-shadow: none;
+		-webkit-tap-highlight-color: transparent;
+
+
+	}
+
+
+
+
+
+
+	.toggleBtn div label::after {
+
+		width: 32px;
+		height: 32px;
+		top: 1px;
+		margin-left: 2px;
+
+
+	}
+
+	.toggleBtn div input:checked+label::after {
+
+		margin-left: 34px;
+
+	}
+}

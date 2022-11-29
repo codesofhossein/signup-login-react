@@ -1,0 +1,309 @@
+@import "../../animate.module";
+
+@mixin spanStyle {
+
+    margin: 7px 2px;
+    font-size: 0.75rem;
+    background-color: rgba(246, 162, 162, 0.279);
+    color: rgb(232, 1, 1);
+    padding: 2px 5px;
+    border-radius: 3px;
+    width: fit-content;
+    animation: fadeInDown 0.2s;
+
+}
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    min-height: calc(100vh - 68px);
+    align-items: center;
+    // background-color: #f9f9f9;
+}
+
+
+.formContainer {
+
+    border: solid #c0c0c0 1px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 50px;
+    margin: 50px;
+    animation: zoomIn 0.5s;
+
+
+
+    div:nth-child(6) label {
+
+        color: #1a73e8;
+    }
+}
+
+
+.header {
+
+    font-size: 1.8rem;
+    color: #1a73e8;
+    margin-bottom: 40px;
+    animation: zoomIn 0.2s;
+}
+
+
+.inputContainer {
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    height: 75px;
+
+    label {
+
+        margin-bottom: 5px;
+        color: rgb(85, 85, 85);
+        font-size: 0.9rem;
+
+
+    }
+
+
+    span {
+
+        @include spanStyle();
+
+    }
+
+
+}
+
+
+.formInput {
+
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border: #c0c0c0 1px solid;
+    border-radius: 5px;
+
+}
+
+.uncompleted {
+
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border: #de0808 1px solid;
+    border-radius: 5px;
+}
+
+.formInput:focus,
+.uncompleted:focus {
+
+    outline: none;
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    border: #1a73e8 1px solid;
+}
+
+
+.checkboxContainer {
+
+    display: flex;
+    flex-direction: column !important;
+    margin: 2rem 0;
+    height: 75px;
+
+    div {
+
+        display: flex;
+        flex-direction: row !important;
+        align-items: center;
+
+
+        label {
+
+            font-size: 0.9rem;
+        }
+
+        input {
+
+            margin-left: 20px;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #1a73e8;
+            appearance: none;
+            border-radius: 5px;
+            transition: all 0.2s ease-in;
+            cursor: pointer;
+
+            &:checked {
+
+                background-color: #1a73e8;
+                border-radius: 50%;
+            }
+
+            &:focus {
+
+                outline: none;
+                border: 2px solid #004aaa;
+            }
+        }
+    }
+
+
+    span {
+
+        @include spanStyle();
+    }
+}
+
+
+
+
+.buttons {
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    align-items: center;
+
+    a {
+        color: #1a73e8;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.2s;
+    }
+
+    a:hover {
+
+        color: #004aaa;
+    }
+
+    button {
+
+        background-color: #1a73e8;
+        color: #fff;
+        border: none;
+        padding: 0.6rem 1.4rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+
+            box-shadow: 0 1px 10px 3px rgba(225, 225, 225, 0.64);
+            background-color: #004aaa;
+        }
+
+    }
+}
+
+@media(max-width : 768px) {
+
+
+    .formContainer {
+
+        width: 100%;
+        padding: 40px 30px;
+        margin: 70px 70px 0px;
+    }
+
+    .formInput,
+    .uncompleted,
+    .formInput:focus,
+    .uncompleted:focus {
+
+        width: 100%;
+    }
+
+    .checkboxContainer {
+
+        div {
+
+
+            flex-direction: column !important;
+            align-items: flex-start;
+
+            input {
+
+                margin: 10px 0;
+            }
+        }
+
+    }
+
+    .buttons {
+
+        margin-top: 1rem;
+
+        a {
+            font-size: 0.9rem;
+        }
+    
+    
+        button {
+    
+            
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+    
+            &:hover {
+    
+                box-shadow: 0 1px 10px 3px rgba(225, 225, 225, 0.64);
+                background-color: #004aaa;
+            }
+    
+        }
+        
+    }
+
+    .header {
+
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .inputContainer {
+
+
+        label {
+
+            font-size: 0.7rem;
+        }
+
+
+        span {
+
+            font-size: 0.6rem;
+        }
+
+
+    }
+
+    .formInput {
+
+        height: 29px;
+        line-height: 29px;  
+    
+    }
+    
+    .uncompleted {
+       
+        height: 29px;
+        line-height: 29px;
+       
+    }
+    
+    .formInput:focus,
+    .uncompleted:focus {  
+       
+        height: 29px;
+        line-height: 29px;
+        
+    }
+
+
+}
